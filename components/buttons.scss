@@ -1,0 +1,21 @@
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn {
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: var(--grey-dark);
+  &:hover {
+    cursor: pointer
+  }
+  &.btn-next {
+    background: var(--blue-dark);
+    color: #fff;
+  }
+  &.btn-confirm {
+    background: var(--blue);
+    color: #fff;
+  }
+}
