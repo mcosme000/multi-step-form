@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Front Mentor - Multistep Form</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <div class="container">
+      <div class="sidebar">
+        <div class="step">
+          <div class="circle">1</div>
+          <div>
+            <p>step 1</p>
+            <h2>your info</h2>
+          </div>
+        </div>
+        <div class="step">
+          <div class="circle">2</div>
+          <div>
+            <p>step 2</p>
+            <h2>select plan</h2>
+          </div>
+        </div>
+        <div class="step">
+          <div class="circle">3</div>
+          <div>
+            <p>step 3</p>
+            <h2>add-ons</h2>
+          </div>
+        </div>
+        <div class="step">
+          <div class="circle">4</div>
+          <div>
+            <p>step 4</p>
+            <h2>summary</h2>
+          </div>
+        </div>
+      </div>
+      <div class="form">
+
+        <!-- Tab 1 -->
+        <div class="tab" id="tab1">
+          <h1>Personal info</h1>
+          <p>Please provide your name, email address and phone number</p>
+          <div>
+            <label for="name">Name</label>
+            <input type="text" placeholder="e.g. Stephen King">
+          </div>
+          <div>
+            <label for="name">Email Address</label>
+            <input type="email" placeholder="e.g. stephenking@lorem.com">
+          </div>
+          <div>
+            <label for="name">Phone Number</label>
+            <input type="number" placeholder="e.g. +1 234 567 890">
+          </div>
+          <div class="buttons">
+            <a class="btn btn-next">Next Step</a>
+          </div>
+        </div>
+
+        <!-- Tab 2 -->
+        <div class="tab" id="tab1">
+          <h1>Select your plan</h1>
+          <p>You have the option of monthly or year billing</p>
+          <div>
+            <div>
+              <input type="radio" id="arcade" name="plan" value="arcade">
+              <label for="arcade">Arcade <span class="plan-price">$9/mo</span></label>
+            </div>
+            <div>
+              <input type="radio" id="advanced" name="plan" value="advanced">
+              <label for="advanced">Advanced<span class="plan-price">$12/mo</span></label>
+            </div>
+            <div>
+              <input type="radio" id="pro" name="plan" value="pro">
+              <label for="pro">Pro<span class="plan-price">$15/mo</span></label>
+            </div>
+          </div>
+          <div>
+            <div>
+              <input type="radio" id="monthly" name="type">
+              <label for="monthly">Monthly</label>
+            </div>
+            <div>
+              <input type="radio" id="yearly" name="type">
+              <label for="yearly">Yearly</label>
+            </div>
+          </div>
+          <div class="buttons">
+            <a class="btn btn-back">Go Back</a>
+            <a class="btn btn-next">Next Step</a>
+          </div>
+        </div>
+
+        <!-- Tab 3 -->
+        <div class="tab" id="tab3">
+          <h1>Pick Add-ons</h1>
+          <p>Add-ons help enhance your gaming experience</p>
+          <div>
+            <div>
+              <input type="checkbox" id="online" name="addon" value="online">
+              <label for="online">Online service</label>
+            </div>
+            <div>
+              <input type="checkbox" id="storage" name="addon" value="storage">
+              <label for="storate">Larger storage</label>
+            </div>
+            <div>
+              <input type="checkbox" id="profile" name="addon" value="profile">
+              <label for="profile">Customizable profile</label>
+            </div>
+          </div>
+          <div class="buttons">
+            <a class="btn btn-back">Go Back</a>
+            <a class="btn btn-next">Next Step</a>
+          </div>
+        </div>
+
+        <!-- Tab 4 -->
+        <div class="tab" id="tab4">
+          <h1>Finishing up</h1>
+          <p>Double-check everything looks OK before confirming.</p>
+          <div>
+            <div class="confirm-plan">
+              <div>
+                <p id="selected-plan">Arcade (Monthly)</p>
+                <p>Change</p>
+              </div>
+              <div class="price">$9/mo</div>
+            </div>
+
+            <div class="confirm-addson">
+              <div>
+                <p>Online service</p>
+                <p>+1$/mo</p>
+              </div>
+              <div>
+                <p>Larger storage</p>
+                <p>+2$/mo</p>
+              </div>
+            </div>
+
+            <div class="total-price">
+              <p>Total (per month)</p>
+              <p>+12$/mo</p>
+            </div>
+          </div>
+          <div class="buttons">
+            <a class="btn btn-back">Go Back</a>
+            <a class="btn btn-confirm">Confirm</a>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>
