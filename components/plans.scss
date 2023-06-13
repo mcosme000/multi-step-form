@@ -1,0 +1,64 @@
+.plans-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+
+  input {
+    display: none;
+  }
+
+  label {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15px;
+    border: 1px solid var(--grey-light);
+    border-radius: 10px;
+    img {
+      width: 50px;
+    }
+
+    .plan-title {
+      color: var(--blue-dark);
+    }
+
+    .plan-price {
+      margin-top: 10px;
+      color: var(--grey);
+      font-weight: 300;
+      font-size: 16px;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  input:checked + label {
+    border: 1px solid var(--purple);
+    background: var(--purple-light);
+  }
+}
+
+.yearly-discount, .yearly-plan {
+  display: none;
+}
+
+.yearly-discount {
+  margin-top: 10px;
+  font-size: 14px;
+  color: var(--blue-dark);
+}
+
+.radio-buttons {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  width: 100%;
+  background: var(--purple-light);
+}
+
+.inline {
+  display: inline;
+}
