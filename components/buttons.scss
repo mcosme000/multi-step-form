@@ -1,11 +1,16 @@
 .buttons {
+  margin-top: 20px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  &.flex-end {
+    justify-content: flex-end;
+  }
 }
 
 .btn {
-  padding: 10px 20px;
-  border-radius: 5px;
+  padding: 14px 25px;
+  border-radius: 8px;
   color: var(--grey-dark);
   &:hover {
     cursor: pointer
@@ -17,5 +22,12 @@
   &.btn-confirm {
     background: var(--blue);
     color: #fff;
+  }
+}
+
+.btn-back {
+  color: var(--grey-dark);
+  &:hover {
+    cursor: pointer;
   }
 }

@@ -1,21 +1,28 @@
 .plans-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr;
   grid-gap: 10px;
+  @media(min-width: 700px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 
   input {
     display: none;
   }
 
   label {
-    height: 200px;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    align-items: flex-start;
     padding: 15px;
     border: 1px solid var(--grey-light);
     border-radius: 10px;
+    @media(min-width: 700px) {
+      height: 200px;
+      flex-direction: column;
+      justify-content: space-between;
+    }
     img {
+      margin-right: 20px;
       width: 50px;
     }
 
