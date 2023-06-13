@@ -33,12 +33,15 @@ backButtons.forEach((button) => button.addEventListener('click', (e) => {
   updateCurrentStep(selectedStep, className)
 }))
 
-// Display yearly plan prices
 
+// Display yearly plan prices and addons
 const yearlyInput = document.getElementById('yearly');
 const monthlyPrices = document.querySelectorAll(".monthly-plan")
 const yearlyPrices = document.querySelectorAll(".yearly-plan")
 const yearlyDiscounts = document.querySelectorAll('.yearly-discount');
+const monthlyAddonPrices = document.querySelectorAll('.monthly-addon')
+const yearlyAddonPrices = document.querySelectorAll(".yearly-addon")
+
 
 yearlyInput.addEventListener('change', function() {
   yearlyDiscounts.forEach(discount => {
@@ -52,4 +55,20 @@ yearlyInput.addEventListener('change', function() {
   yearlyPrices.forEach(price => {
     price.style.display = this.checked ? 'block' : 'none';
   })
+
+  monthlyAddonPrices.forEach(price => {
+    price.style.display = this.checked ? 'none' : 'block';
+  })
+
+  yearlyAddonPrices.forEach(price => {
+    price.style.display = this.checked ? 'block' : 'none';
+  })
 });
+
+
+// Add .selected class to Add-on options
+document.querySelectorAll(".checkbox-option").forEach(checkbox => {
+  checkbox.addEventListener('change', (e) => {
+    e.target.parentElement.classList.toggle('selected')
+  })
+})

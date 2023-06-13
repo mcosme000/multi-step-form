@@ -1,0 +1,31 @@
+.addons-container .option {
+  margin-bottom: 20px;
+  width: 100%;
+  padding: 15px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border: 1px solid var(--grey-light);
+  border-radius: 8px;
+  label {
+    margin-left: 20px;
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .addon-price {
+    color: var(--purple);
+    &.yearly-addon {
+      display: none;
+    }
+  }
+  &:hover {
+    cursor: pointer;
+    border: 1px solid var(--purple);
+  }
+  &.selected {
+    border: 1px solid var(--purple);
+    background-color: var(--purple-light);
+  }
+}
