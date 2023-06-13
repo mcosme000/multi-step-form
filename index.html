@@ -39,10 +39,11 @@
             </div>
           </div>
         </div>
+
         <div class="form">
 
           <!-- Tab 1 -->
-          <div class="tab" step="1">
+          <div class="tab hidden" step="1">
             <div class="tab-content">
               <div>
                 <div class="top">
@@ -73,7 +74,7 @@
           </div>
 
           <!-- Tab 2 -->
-          <div class="tab hidden" step="2">
+          <div class="tab" step="2">
             <div class="tab-content">
               <div>
                 <div class="top">
@@ -81,29 +82,47 @@
                   <p>You have the option of monthly or year billing</p>
                 </div>
 
-                <div>
+                <div class="plans-container">
                   <div>
-                    <input type="radio" id="arcade" name="plan" value="arcade">
-                    <label for="arcade">Arcade <span class="plan-price">$9/mo</span></label>
+                    <input type="radio" id="arcade" name="plan" value="arcade" checked>
+                    <label for="arcade">
+                      <img src="./assets/icon-arcade.svg" alt="Icon for Arcade plan">
+                      <div>
+                        <h3 class="plan-title">Arcade</h3>
+                        <p class="plan-price monthly-plan">$9/mo</p>
+                        <p class="plan-price yearly-plan">$90/yr</p>
+                        <p class="yearly-discount">2 months free</p>
+                      </div>
+                    </label>
                   </div>
                   <div>
                     <input type="radio" id="advanced" name="plan" value="advanced">
-                    <label for="advanced">Advanced<span class="plan-price">$12/mo</span></label>
+                    <label for="advanced">
+                      <img src="./assets/icon-advanced.svg" alt="Icon for Advanced plan">
+                      <div>
+                        <h3 class="plan-title">Advanced</h3>
+                        <p class="plan-price monthly-plan">$12/mo</p>
+                        <p class="plan-price yearly-plan">$120/yr</p>
+                        <p class="yearly-discount">2 months free</p>
+                      </div>
+                    </label>
                   </div>
                   <div>
                     <input type="radio" id="pro" name="plan" value="pro">
-                    <label for="pro">Pro<span class="plan-price">$15/mo</span></label>
+                    <label for="pro">
+                      <img src="./assets/icon-pro.svg" alt="Icon for Pro plan">
+                      <div>
+                        <h3 class="plan-title">Pro</h3>
+                        <p class="plan-price monthly-plan">$15/mo</p>
+                        <p class="plan-price yearly-plan">$150/yr</p>
+                        <p class="yearly-discount">2 months free</p>
+                      </div>
+                    </label>
                   </div>
                 </div>
-                <div>
-                  <div>
-                    <input type="radio" id="monthly" name="type">
-                    <label for="monthly">Monthly</label>
-                  </div>
-                  <div>
-                    <input type="radio" id="yearly" name="type">
-                    <label for="yearly">Yearly</label>
-                  </div>
+                <div class="radio-buttons">
+                  <input type="checkbox" id="yearly" name="duration">
+                  <label for="yearly" class="inline">Yearly</p>
                 </div>
               </div>
               <div class="buttons">
@@ -183,6 +202,8 @@
               </div>
             </div>
           </div>
+
+
         </div>
       </div>
     </div>

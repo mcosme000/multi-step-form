@@ -6,6 +6,8 @@ const steps = document.querySelectorAll(".step")
 const forwardButtons = document.querySelectorAll(".btn")
 const backButtons = document.querySelectorAll(".btn-back")
 
+// DOM ELEMENTS
+
 const updateCurrentStep = (number, type) => {
   // hide the current step
   tabs[number - 1].style.display = 'none'
@@ -30,3 +32,24 @@ backButtons.forEach((button) => button.addEventListener('click', (e) => {
   let selectedStep = e.target.parentElement.parentElement.parentElement.getAttribute('step')
   updateCurrentStep(selectedStep, className)
 }))
+
+// Display yearly plan prices
+
+const yearlyInput = document.getElementById('yearly');
+const monthlyPrices = document.querySelectorAll(".monthly-plan")
+const yearlyPrices = document.querySelectorAll(".yearly-plan")
+const yearlyDiscounts = document.querySelectorAll('.yearly-discount');
+
+yearlyInput.addEventListener('change', function() {
+  yearlyDiscounts.forEach(discount => {
+    discount.style.display = this.checked ? 'block' : 'none';
+  });
+
+  monthlyPrices.forEach(price => {
+    price.style.display = this.checked ? 'none' : 'block';
+  })
+
+  yearlyPrices.forEach(price => {
+    price.style.display = this.checked ? 'block' : 'none';
+  })
+});
