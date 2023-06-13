@@ -21,12 +21,12 @@ const updateCurrentStep = (number, type) => {
 
 forwardButtons.forEach((button) => button.addEventListener('click', (e) => {
   let className = e.target.getAttribute('class')
-  let selectedStep = e.target.parentElement.parentElement.getAttribute('step')
+  let selectedStep = e.target.parentElement.parentElement.parentElement.getAttribute('step')
   updateCurrentStep(selectedStep, className)
 }))
 
 backButtons.forEach((button) => button.addEventListener('click', (e) => {
   let className = e.target.getAttribute('class')
-  let selectedStep = e.target.parentElement.parentElement.getAttribute('step')
+  let selectedStep = e.target.parentElement.parentElement.parentElement.getAttribute('step')
   updateCurrentStep(selectedStep, className)
 }))
