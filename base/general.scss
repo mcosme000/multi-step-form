@@ -19,6 +19,9 @@ hr {
   font-size: 16px;
   text-decoration: underline;
   color: var(--grey);
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .blue-text {
