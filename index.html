@@ -43,7 +43,7 @@
         <div class="form">
 
           <!-- Tab 1 -->
-          <div class="tab hidden" step="1">
+          <div class="tab" step="1">
             <div class="tab-content">
               <div>
                 <div class="top">
@@ -89,8 +89,8 @@
                       <img src="./assets/icon-arcade.svg" alt="Icon for Arcade plan">
                       <div>
                         <h3 class="title">Arcade</h3>
-                        <p class="plan-price monthly-plan">$9/mo</p>
-                        <p class="plan-price yearly-plan">$90/yr</p>
+                        <p class="plan-price monthly-plan" price="9">$9/mo</p>
+                        <p class="plan-price yearly-plan" price="90">$90/yr</p>
                         <p class="yearly-discount">2 months free</p>
                       </div>
                     </label>
@@ -101,8 +101,8 @@
                       <img src="./assets/icon-advanced.svg" alt="Icon for Advanced plan">
                       <div>
                         <h3 class="title">Advanced</h3>
-                        <p class="plan-price monthly-plan">$12/mo</p>
-                        <p class="plan-price yearly-plan">$120/yr</p>
+                        <p class="plan-price monthly-plan" price="12">$12/mo</p>
+                        <p class="plan-price yearly-plan" price="120">$120/yr</p>
                         <p class="yearly-discount">2 months free</p>
                       </div>
                     </label>
@@ -113,8 +113,8 @@
                       <img src="./assets/icon-pro.svg" alt="Icon for Pro plan">
                       <div>
                         <h3 class="title">Pro</h3>
-                        <p class="plan-price monthly-plan">$15/mo</p>
-                        <p class="plan-price yearly-plan">$150/yr</p>
+                        <p class="plan-price monthly-plan" price="15">$15/mo</p>
+                        <p class="plan-price yearly-plan" price="150">$150/yr</p>
                         <p class="yearly-discount">2 months free</p>
                       </div>
                     </label>
@@ -148,8 +148,8 @@
                         <h4 class="title">Online service</h4>
                         <p class="description">Access to multiplayer games</p>
                       </div>
-                      <p class="addon-price monthly-addon">+$1/mo</p>
-                      <p class="addon-price yearly-addon">+$10/yr</p>
+                      <p class="addon-price monthly-addon" price="1">+$1/mo</p>
+                      <p class="addon-price yearly-addon" price="10">+$10/yr</p>
                     </label>
                   </div>
                   <div class="option card card-border">
@@ -159,8 +159,8 @@
                         <h4 class="title">Larger storage</h4>
                         <p class="description">Extra 1TB of cloud save</p>
                       </div>
-                      <p class="addon-price monthly-addon">+$2/mo</p>
-                      <p class="addon-price yearly-addon">+$20/yr</p>
+                      <p class="addon-price monthly-addon" price="2">+$2/mo</p>
+                      <p class="addon-price yearly-addon" price="20">+$20/yr</p>
                     </label>
                   </div>
                   <div class="option card card-border">
@@ -170,8 +170,8 @@
                         <h4 class="title">Customizable profile</h4>
                         <p class="description">Custom theme on your profile</p>
                       </div>
-                      <p class="addon-price monthly-addon">+$2/mo</p>
-                      <p class="addon-price yearly-addon">+$20/yr</p>
+                      <p class="addon-price monthly-addon" price="2">+$2/mo</p>
+                      <p class="addon-price yearly-addon" price="20">+$20/yr</p>
                     </label>
                   </div>
                 </div>
@@ -184,7 +184,7 @@
           </div>
 
           <!-- Tab 4 -->
-          <div class="tab" step="4">
+          <div class="tab hidden" step="4">
             <div class="tab-content">
               <div>
                 <div class="top">
@@ -206,7 +206,7 @@
                 </div>
                 <div class="total-price flex card">
                   <p>Total (per month)</p>
-                  <p>+12$/mo</p>
+                  <p id="finalPrice">+12$/mo</p>
                 </div>
               </div>
               <div class="buttons">

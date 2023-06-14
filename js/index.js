@@ -31,31 +31,38 @@ const monthlyAddonPrices = document.querySelectorAll('.monthly-addon')
 const yearlyAddonPrices = document.querySelectorAll(".yearly-addon")
 
 let information = {}
+let yearly = false
 
 // Display final information
 const updateInformation = () => {
   console.log(information)
   let confirmAddOn = document.getElementById('confirm-addon')
+  let totalPrice = 0
   while (confirmAddOn.firstChild) {
     confirmAddOn.removeChild(confirmAddOn.firstChild)
   }
 
   if ('Plan' in information) {
     let plan = information['Plan']
-    document.getElementById("selected-plan").innerHTML = plan.planName
-    document.getElementById("selected-price").innerHTML = plan.planPrices[0].innerHTML
+    document.getElementById("selected-plan").innerHTML = plan['name']
+    let price = `${yearly ? plan['prices']['yearly'] : plan['prices']['monthly']}`
+    totalPrice += Number(price)
+    document.getElementById("selected-price").innerHTML = `$${price}/${yearly ? 'yr' : 'mo'}`
   }
 
   if ('Addons' in information) {
     information['Addons'].forEach(addon => {
+      console.log(addon)
       let div = document.createElement('DIV')
       div.classList = "addon flex"
 
       let p = document.createElement('p')
-      p.innerHTML = addon[0]
+      p.innerHTML = addon['option']
 
       let price = document.createElement('p')
-      price.innerHTML = addon[1][0].innerHTML
+      let priceValue = `${yearly ? addon['prices']['yearly'] : addon['prices']['monthly']}`
+      totalPrice += Number(priceValue)
+      price.innerHTML = `+$${priceValue}/${yearly ? 'yr' : 'mo'}`
 
       div.appendChild(p)
       div.appendChild(price)
@@ -68,6 +75,8 @@ const updateInformation = () => {
     console.log(p)
     confirmAddOn.appendChild(p)
   }
+
+  document.getElementById('finalPrice').innerHTML = `$${totalPrice}/${yearly ? 'yr' : 'mo'}`
 }
 
 // Gather information
@@ -75,8 +84,9 @@ document.querySelectorAll("input[name='plan']").forEach(input => {
   input.addEventListener('change', () => {
     document.querySelectorAll("input[name='plan']:checked").forEach(selectedOption => {
       let planName = selectedOption.getAttribute('id')
-      let planPrices = selectedOption.nextElementSibling.querySelectorAll('.plan-price')
-      information['Plan'] = { planName, planPrices }
+      let planPricesElements = Array.from(selectedOption.nextElementSibling.querySelectorAll('.plan-price'))
+      let planPrices = planPricesElements.map(elem => elem.getAttribute('price'))
+      information['Plan'] = { 'name': planName, 'prices': {monthly: planPrices[0], yearly: planPrices[1]} }
     })
     updateInformation();
   })
@@ -88,8 +98,9 @@ document.querySelectorAll("input[name='addon']").forEach(option => {
     document.querySelectorAll("input[name='addon']:checked").forEach(selectedOption => {
       const selectedTarget = selectedOption.nextElementSibling;
       let option = selectedTarget.querySelector(".title").innerText;
-      let optionPrices = selectedTarget.querySelectorAll(".addon-price");
-      addons.push([option, optionPrices]);
+      let optionPricesElements = Array.from(selectedTarget.querySelectorAll(".addon-price"))
+      let optionPrices = optionPricesElements.map(elem => elem.getAttribute('price'))
+      addons.push({'option': option, 'prices': {monthly: optionPrices[0], yearly: optionPrices[1]}});
     });
     information['Addons'] = addons
     updateInformation();
@@ -97,6 +108,8 @@ document.querySelectorAll("input[name='addon']").forEach(option => {
 })
 
 yearlyInput.addEventListener('change', function() {
+  yearly = !yearly
+  updateInformation();
   yearlyDiscounts.forEach(discount => {
     discount.style.display = this.checked ? 'block' : 'none';
   });
