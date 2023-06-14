@@ -43,7 +43,7 @@
         <div class="form">
 
           <!-- Tab 1 -->
-          <div class="tab" step="1">
+          <div class="tab hidden" step="1">
             <div class="tab-content">
               <div>
                 <div class="top">
@@ -85,7 +85,7 @@
                 <div class="plans-container">
                   <div>
                     <input type="radio" id="arcade" name="plan" value="arcade" checked>
-                    <label for="arcade">
+                    <label class="card card-border" for="arcade">
                       <img src="./assets/icon-arcade.svg" alt="Icon for Arcade plan">
                       <div>
                         <h3 class="title">Arcade</h3>
@@ -97,7 +97,7 @@
                   </div>
                   <div>
                     <input type="radio" id="advanced" name="plan" value="advanced">
-                    <label for="advanced">
+                    <label class="card card-border" for="advanced">
                       <img src="./assets/icon-advanced.svg" alt="Icon for Advanced plan">
                       <div>
                         <h3 class="title">Advanced</h3>
@@ -109,7 +109,7 @@
                   </div>
                   <div>
                     <input type="radio" id="pro" name="plan" value="pro">
-                    <label for="pro">
+                    <label class="card card-border" for="pro">
                       <img src="./assets/icon-pro.svg" alt="Icon for Pro plan">
                       <div>
                         <h3 class="title">Pro</h3>
@@ -141,7 +141,7 @@
                   <p>Add-ons help enhance your gaming experience</p>
                 </div>
                 <div class="addons-container">
-                  <div class="option">
+                  <div class="option card card-border">
                     <input type="checkbox" class="checkbox-option" id="online" name="addon" value="online">
                     <label for="online">
                       <div>
@@ -152,7 +152,7 @@
                       <p class="addon-price yearly-addon">+$10/yr</p>
                     </label>
                   </div>
-                  <div class="option">
+                  <div class="option card card-border">
                     <input type="checkbox" class="checkbox-option" id="storage" name="addon" value="storage">
                     <label for="storage">
                       <div>
@@ -163,7 +163,7 @@
                       <p class="addon-price yearly-addon">+$20/yr</p>
                     </label>
                   </div>
-                  <div class="option">
+                  <div class="option card card-border">
                     <input type="checkbox" class="checkbox-option" id="profile" name="addon" value="profile">
                     <label for="profile">
                       <div>
@@ -184,37 +184,29 @@
           </div>
 
           <!-- Tab 4 -->
-          <div class="tab hidden" step="4">
+          <div class="tab" step="4">
             <div class="tab-content">
               <div>
                 <div class="top">
                   <h1>Finishing up</h1>
                   <p>Double-check everything looks OK before confirming.</p>
                 </div>
-                <div>
-                  <div class="confirm-plan">
+                <div class="card card-background" id="confirm-plan">
+                  <div class="flex">
                     <div>
-                      <p id="selected-plan">Arcade (Monthly)</p>
+                      <p id="selected-plan">Arcade</p>
                       <p>Change</p>
                     </div>
-                    <div class="price">$9/mo</div>
+                    <p id="selected-price">$9/mo</p>
                   </div>
-
-                  <div class="confirm-addson">
-                    <div>
-                      <p>Online service</p>
-                      <p>+1$/mo</p>
-                    </div>
-                    <div>
-                      <p>Larger storage</p>
-                      <p>+2$/mo</p>
-                    </div>
+                  <hr>
+                  <div id="confirm-addon">
+                    <p>No add-ons included</p>
                   </div>
-
-                  <div class="total-price">
-                    <p>Total (per month)</p>
-                    <p>+12$/mo</p>
-                  </div>
+                </div>
+                <div class="total-price flex card">
+                  <p>Total (per month)</p>
+                  <p>+12$/mo</p>
                 </div>
               </div>
               <div class="buttons">
@@ -224,6 +216,17 @@
             </div>
           </div>
 
+          <!-- Completion tab -->
+          <div class="tab hidden" step="5">
+            <div class="tab-content center">
+              <img src="./assets/icon-thank-you.svg" alt="form completion icon" class="completion-icon">
+              <h1>Thank you!</h1>
+              <p>Thanks for confirming your subscription! We hope you have
+                fun using our platform. If you ever need support, please feel free
+                to email us at support@loremgaming.com.
+              </p>
+            </div>
+          </div>
 
         </div>
       </div>
