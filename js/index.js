@@ -1,6 +1,7 @@
 const links = document.querySelectorAll("a");
 const tabs = document.querySelectorAll(".tab")
 const steps = document.querySelectorAll(".circle")
+const change = document.querySelector(".link")
 
 const updateCurrentStep = (number, type) => {
   tabs[number - 1].style.display = 'none'
@@ -33,6 +34,8 @@ const yearlyAddonPrices = document.querySelectorAll(".yearly-addon")
 let information = {}
 let yearly = false
 
+
+
 // Display final information
 const updateInformation = () => {
   console.log(information)
@@ -44,7 +47,7 @@ const updateInformation = () => {
 
   if ('Plan' in information) {
     let plan = information['Plan']
-    document.getElementById("selected-plan").innerHTML = plan['name']
+    document.getElementById("selected-plan").innerHTML = `${plan['name']} (${yearly ? 'Yearly' : 'Monthly'})`
     let price = `${yearly ? plan['prices']['yearly'] : plan['prices']['monthly']}`
     totalPrice += Number(price)
     document.getElementById("selected-price").innerHTML = `$${price}/${yearly ? 'yr' : 'mo'}`
@@ -54,12 +57,14 @@ const updateInformation = () => {
     information['Addons'].forEach(addon => {
       console.log(addon)
       let div = document.createElement('DIV')
-      div.classList = "addon flex"
+      div.classList = "flex"
 
       let p = document.createElement('p')
+      p.classList.add('text-grey')
       p.innerHTML = addon['option']
 
       let price = document.createElement('p')
+      price.classList.add('blue-text')
       let priceValue = `${yearly ? addon['prices']['yearly'] : addon['prices']['monthly']}`
       totalPrice += Number(priceValue)
       price.innerHTML = `+$${priceValue}/${yearly ? 'yr' : 'mo'}`
@@ -72,12 +77,17 @@ const updateInformation = () => {
   } else if (information['Addons'] === []) {
     let p = document.createElement('p')
     p.innerHTML = 'No add-ons included'
-    console.log(p)
     confirmAddOn.appendChild(p)
   }
 
+  document.getElementById('total-per').innerHTML = `${yearly ? 'Total (per year)' : 'Total (per month)'}`
   document.getElementById('finalPrice').innerHTML = `$${totalPrice}/${yearly ? 'yr' : 'mo'}`
 }
+
+change.addEventListener('click', () => {
+  yearly = !yearly
+  updateInformation()
+})
 
 // Gather information
 document.querySelectorAll("input[name='plan']").forEach(input => {
