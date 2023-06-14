@@ -1,4 +1,5 @@
 @use './base/variables.scss';
+@use './base/general.scss';
 @use './base/structure.scss';
 
 
@@ -6,9 +7,9 @@
 @use './components/sidebar.scss';
 @use './components/form.scss';
 @use './components/buttons.scss';
+@use './components/card.scss';
 @use './components/plans.scss';
 @use './components/addons.scss';
-
 
 
 // sass --watch styles.scss styles.css

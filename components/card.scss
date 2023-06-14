@@ -1,0 +1,18 @@
+.card {
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.card-border {
+  border: 1px solid var(--grey-light);
+}
+
+.card-background {
+  background: var(--purple-light);
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
