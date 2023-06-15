@@ -16,10 +16,47 @@ const updateCurrentStep = (number, type) => {
   }
 }
 
+const nameValidation = () => {
+  let nameInput = document.querySelector('#nameInput')
+  if (nameInput.validity.valueMissing) {
+    nameInput.setCustomValidity("Field cannot be empty");
+    nameInput.reportValidity();
+  } else { return true }
+}
+
+const emailValidation = () => {
+  let emailInput = document.querySelector('#emailInput')
+  if (emailInput.validity.valueMissing) {
+    emailInput.setCustomValidity("Field cannot be empty");
+    emailInput.reportValidity();
+  } else { return true }
+}
+
+const phoneValidation = () => {
+  let phoneInput = document.querySelector('#phoneInput')
+  if (phoneInput.validity.valueMissing) {
+    phoneInput.setCustomValidity("Field cannot be empty");
+    phoneInput.reportValidity();
+  } else { return true }
+
+}
+
+const formValidations = () => {
+  if (nameValidation() && emailValidation() && phoneValidation()) {
+    return true
+  } else {
+    return false
+  }
+}
+
 links.forEach((button) => button.addEventListener('click', (e) => {
   let className = e.target.getAttribute('class')
   let selectedStep = e.target.parentElement.parentElement.parentElement.getAttribute('step')
-  updateCurrentStep(selectedStep, className)
+  if (e.target.getAttribute('id') !== null) {
+    formValidations() ? updateCurrentStep(selectedStep, className) : console.log('Not valid')
+  } else {
+    updateCurrentStep(selectedStep, className)
+  }
 }))
 
 
