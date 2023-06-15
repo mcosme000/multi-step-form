@@ -7,9 +7,9 @@
   <link rel="stylesheet" href="styles.css">
 </head>
   <body>
-    <div class="app">
+    <main>
       <div class="container">
-        <div class="sidebar">
+        <nav>
           <div class="step">
             <div class="circle selected">1</div>
             <div class="step-description">
@@ -38,12 +38,12 @@
               <h2 class="step-title">summary</h2>
             </div>
           </div>
-        </div>
+        </nav>
 
         <div class="form">
 
           <!-- Tab 1 -->
-          <div class="tab" step="1">
+          <section class="tab" step="1">
             <div class="tab-content">
               <div>
                 <div class="top">
@@ -71,10 +71,10 @@
                 <a class="btn btn-next flex-end">Next Step</a>
               </div>
             </div>
-          </div>
+          </section>
 
           <!-- Tab 2 -->
-          <div class="tab hidden" step="2">
+          <section class="tab hidden" step="2">
             <div class="tab-content">
               <div>
                 <div class="top">
@@ -130,10 +130,10 @@
                 <a class="btn btn-next">Next Step</a>
               </div>
             </div>
-          </div>
+          </section>
 
           <!-- Tab 3 -->
-          <div class="tab hidden" step="3">
+          <section class="tab hidden" step="3">
             <div class="tab-content">
               <div>
                 <div class="top">
@@ -181,10 +181,10 @@
                 <a class="btn btn-next">Next Step</a>
               </div>
             </div>
-          </div>
+          </section>
 
           <!-- Tab 4 -->
-          <div class="tab hidden" step="4">
+          <section class="tab hidden" step="4">
             <div class="tab-content">
               <div>
                 <div class="top">
@@ -214,10 +214,10 @@
                 <a class="btn btn-confirm">Confirm</a>
               </div>
             </div>
-          </div>
+          </section>
 
           <!-- Completion tab -->
-          <div class="tab hidden" step="5">
+          <section class="tab hidden" step="5">
             <div class="tab-content center">
               <img src="./assets/icon-thank-you.svg" alt="form completion icon" class="completion-icon">
               <h1>Thank you!</h1>
@@ -226,11 +226,11 @@
                 to email us at support@loremgaming.com.
               </p>
             </div>
-          </div>
+          </section>
 
         </div>
       </div>
-    </div>
+    </main>
     <script src="./js/index.js"></script>
   </body>
 </html>
