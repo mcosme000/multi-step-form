@@ -51,7 +51,7 @@ const formValidations = () => {
 
 links.forEach((button) => button.addEventListener('click', (e) => {
   let className = e.target.getAttribute('class')
-  let selectedStep = e.target.parentElement.parentElement.parentElement.getAttribute('step')
+  let selectedStep = e.target.parentElement.parentElement.parentElement.getAttribute('id')
   if (e.target.getAttribute('id') !== null) {
     formValidations() ? updateCurrentStep(selectedStep, className) : console.log('Not valid')
   } else {
@@ -70,8 +70,6 @@ const yearlyAddonPrices = document.querySelectorAll(".yearly-addon")
 
 let information = {}
 let yearly = false
-
-
 
 // Display final information
 const updateInformation = () => {
